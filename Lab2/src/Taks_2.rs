@@ -1,4 +1,3 @@
-
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::{BufReader, Read};
@@ -11,6 +10,7 @@ fn main() {
         .add_filter("Текстові файли", &["txt"])
         .pick_file()
         .expect("Не вдалося вибрати файл");
+
     let file_path_str = file_path.to_str().expect("Не вдалося перетворити шлях у строку");
 
     let frequencies = count_char_frequency_from_file(file_path_str);
@@ -23,7 +23,6 @@ fn main() {
         println!("{}: {:.4}", char, freq);
     }
 }
-
 
 fn count_char_frequency_from_file(file_path: &str) -> HashMap<char, f32> {
     let file = File::open(file_path).expect("Не вдалося відкрити файл");

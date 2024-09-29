@@ -5,22 +5,19 @@ use rfd::FileDialog;
 
 #[test]
 fn main() {
-    // Открываем диалог для выбора файла
+
     let file_path = FileDialog::new()
         .add_filter("Текстові файли", &["txt"])
         .pick_file()
         .expect("Не вдалося вибрати файл");
 
-    // Читаем содержимое файла
+
     let text = fs::read_to_string(file_path).expect("Не вдалося прочитати файл");
 
-    // Анализируем частоты букв в зашифрованном тексте
     let text_frequencies = analyze_text_frequencies(&text);
 
-    // Получаем частоты букв для украинского языка
     let lang_frequencies = get_ukrainian_letter_frequencies();
 
-    // Пробуем все возможные сдвиги от 0 до длины алфавита
     let mut best_shift = 0;
     let mut best_score = f64::MAX;
 
@@ -36,12 +33,11 @@ fn main() {
         }
     }
 
-    // Выводим лучший найденный сдвиг и дешифрованный текст
     let decrypted_message = decrypt_caesar(&text, best_shift);
-    println!("Найкращий зсув: {}", best_shift);
+    println!("Знайдений зсув: {}", best_shift);
     println!("Дешифроване повідомлення: {}", decrypted_message);
 }
-// Новая таблица частот для украинского языка
+
 fn get_ukrainian_letter_frequencies() -> HashMap<char, f64> {
     let mut frequencies = HashMap::new();
     frequencies.insert('о', 0.1043);
@@ -79,28 +75,25 @@ fn get_ukrainian_letter_frequencies() -> HashMap<char, f64> {
     frequencies
 }
 
-// Анализ частоты букв в тексте
 fn analyze_text_frequencies(text: &str) -> HashMap<char, f64> {
     let mut frequency_map = HashMap::new();
     let mut total_letters = 0;
 
-    // Считаем количество букв
+
     for c in text.chars().filter(|c| c.is_alphabetic()) {
         let c = c.to_lowercase().next().unwrap();
-        *frequency_map.entry(c).or_insert(0.0) += 1.0; // Используем `f64` для подсчета
+        *frequency_map.entry(c).or_insert(0.0) += 1.0;
         total_letters += 1;
     }
 
-    // Преобразуем частоты
     for value in frequency_map.values_mut() {
-        *value = *value / total_letters as f64; // Вычисляем частоты как `f64`
+        *value = *value / total_letters as f64;
     }
 
     frequency_map
 }
 
 
-// Попытка дешифровки с заданным сдвигом
 fn decrypt_caesar(text: &str, shift: i32) -> String {
     let alphabet = "абвгґдеєжзийіїклмнопрстуфхцчшщьюя";
     let alphabet_len = alphabet.chars().count() as i32;
@@ -111,13 +104,12 @@ fn decrypt_caesar(text: &str, shift: i32) -> String {
                 let shifted_pos = (pos as i32 - shift).rem_euclid(alphabet_len);
                 alphabet.chars().nth(shifted_pos as usize).unwrap()
             } else {
-                c // если символ не в алфавите, оставляем его как есть
+                c
             }
         })
         .collect()
 }
 
-// Оценка соответствия частот текста частотам языка
 fn compare_frequencies(text_frequencies: &HashMap<char, f64>, lang_frequencies: &HashMap<char, f64>) -> f64 {
     let mut score = 0.0;
 
@@ -125,7 +117,7 @@ fn compare_frequencies(text_frequencies: &HashMap<char, f64>, lang_frequencies: 
         if let Some(lang_freq) = lang_frequencies.get(letter) {
             score += (text_freq - lang_freq).abs();
         } else {
-            score += *text_freq; // если символа нет в языке, это добавит ошибку
+            score += *text_freq;
         }
     }
 
