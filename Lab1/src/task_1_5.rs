@@ -1,5 +1,6 @@
 use itertools::Itertools;
 
+#[test]
 fn main()
 {
     let digits = vec![1,2,3,4,5,];

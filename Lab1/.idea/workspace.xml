@@ -8,7 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f3daba1-5018-4504-9065-888128fd8924" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_1.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_2.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_3.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_4.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_5.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_6.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_7.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_8.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/Task_9.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Practical_work_of_operating_systems/Variables_3/src/main.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../untitled1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../untitled1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../untitled1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab2/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab2/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +38,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="my8z9u0x" />
@@ -37,27 +51,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
-    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
-    &quot;org.rust.disableDetachedFileInspectionH:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab1/src/Task-5.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.disableDetachedFileInspectionH:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab1/src/task-5.rs&quot;: &quot;true&quot;,
-    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cargo.Run.executor": "Run",
+    "Cargo.Test task_1_3.executor": "Run",
+    "Cargo.Test task_1_5.executor": "Run",
+    "Cargo.Test task_2.executor": "Run",
+    "Cargo.Test task_2::main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "H:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab11",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.disableDetachedFileInspectionH:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab1/src/Task-5.rs": "true",
+    "org.rust.disableDetachedFileInspectionH:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab1/src/task-5.rs": "true",
+    "org.rust.first.attach.projects": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Cargo.Run">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="buildProfileId" value="dev" />
       <option name="command" value="run --package Lab1 --bin Lab1" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <envs />
@@ -74,6 +94,101 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test task_1_5" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package Lab1 --bin Lab1 task_1_5" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test task_2" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package Lab1 --bin Lab1 task_2" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test task_2::main" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package Lab1 --bin Lab1 task_2::main -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test task_3::comb" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="buildProfileId" value="test" />
+      <option name="command" value="test --package Lab1 --bin Lab1 task_3::comb -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test task_3::main" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package Lab1 --bin Lab1 task_3::main -- --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Test task_3::main" />
+        <item itemvalue="Cargo.Test task_2::main" />
+        <item itemvalue="Cargo.Test task_3::comb" />
+        <item itemvalue="Cargo.Test task_2" />
+        <item itemvalue="Cargo.Test task_1_5" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="E:/Rust/.cargo/bin" />
@@ -90,7 +205,13 @@
       <workItem from="1726895616437" duration="1484000" />
       <workItem from="1726898596516" duration="696000" />
       <workItem from="1726899315042" duration="23000" />
-      <workItem from="1726975827248" duration="4022000" />
+      <workItem from="1726975827248" duration="4386000" />
+      <workItem from="1726980927065" duration="164000" />
+      <workItem from="1726981311225" duration="441000" />
+      <workItem from="1727603352564" duration="1835000" />
+      <workItem from="1727606276678" duration="20000" />
+      <workItem from="1727606302297" duration="2000" />
+      <workItem from="1727606328586" duration="315000" />
     </task>
     <servers />
   </component>
