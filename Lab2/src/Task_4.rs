@@ -1,44 +1,50 @@
-use std::fs::File;
-use std::io::{BufReader, Read};
+use std::fs;
+use std::io::{self, Write};
+use rfd::FileDialog;
+
 
 #[test]
 fn main() {
-    let file_path = rfd::FileDialog::new()
+
+    let file_path = FileDialog::new()
         .add_filter("Текстові файли", &["txt"])
         .pick_file()
         .expect("Не вдалося вибрати файл");
 
-    let file_path_str = file_path.to_str().expect("Не вдалося перетворити шлях у строку");
-    let shift = 3; // Зсув для шифрування
 
-    let file = File::open(file_path_str).expect("Не вдалося відкрити файл");
-    let mut reader = BufReader::new(file);
-    let mut contents = String::new();
-    reader.read_to_string(&mut contents).expect("Не вдалося прочитати файл");
+    let text = fs::read_to_string(file_path).expect("Не вдалося прочитати файл");
 
-    let encrypted = caesar_cipher(&contents, shift);
-    println!("Зашифрований текст:\n{}", encrypted);
+
+    print!("Введіть величину зсуву для шифрування: ");
+    io::stdout().flush().unwrap();
+
+    let mut shift_input = String::new();
+    io::stdin()
+        .read_line(&mut shift_input)
+        .expect("Помилка при введенні зсуву");
+
+    let shift: i32 = shift_input.trim().parse().expect("Неправильний формат зсуву");
+
+
+    let encrypted_message = encrypt_caesar(&text, shift);
+
+
+    println!("Зашифроване повідомлення: {}", encrypted_message);
 }
 
 
-fn caesar_cipher(text: &str, shift: i32) -> String {
-    let mut encrypted_text = String::new();
-    let alphabet = "абвгґдеєжзийіклмнопрстуфхцчшщьюя";
+fn encrypt_caesar(text: &str, shift: i32) -> String {
+    let alphabet = "абвгґдеєжзийіїклмнопрстуфхцчшщьюя";
+    let alphabet_len = alphabet.chars().count() as i32;
 
-    let shift = shift % alphabet.len() as i32;
-
-    for ch in text.chars() {
-        if let Some(pos) = alphabet.find(ch) {
-            let new_pos = (pos as i32 + shift) % alphabet.len() as i32;
-            let new_pos = if new_pos < 0 { new_pos + alphabet.len() as i32 } else { new_pos };
-            if let Some(new_char) = alphabet.chars().nth(new_pos as usize) {
-                encrypted_text.push(new_char);
+    text.chars()
+        .map(|c| {
+            if let Some(pos) = alphabet.chars().position(|x| x == c) {
+                let shifted_pos = (pos as i32 + shift).rem_euclid(alphabet_len);
+                alphabet.chars().nth(shifted_pos as usize).unwrap()
             } else {
-                encrypted_text.push(ch);
+                c // если символ не в алфавите, оставляем его как есть
             }
-        } else {
-            encrypted_text.push(ch);
-        }
-    }
-    encrypted_text
+        })
+        .collect()
 }
