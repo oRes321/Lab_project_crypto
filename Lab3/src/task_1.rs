@@ -6,7 +6,7 @@ fn main() {
     let num1 = read_input();
 
 
-    println!("Введіть оператор (+, -, *, /, & | ^):");
+    println!("Введіть оператор (+, -, *, /):");
     let operator = read_operator();
 
 
@@ -19,9 +19,6 @@ fn main() {
         '-' => num1 - num2,
         '*' => num1 * num2,
         '/' => num1 / num2,
-        '&' => num1 & num2,
-        '|' => num1 | num2,
-        '^' => num1 ^ num2,
         _ => {
             println!("Невідомий оператор!");
             return;
