@@ -51,30 +51,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Run.executor": "Run",
-    "Cargo.Test task_1_3.executor": "Run",
-    "Cargo.Test task_1_5.executor": "Run",
-    "Cargo.Test task_2.executor": "Run",
-    "Cargo.Test task_2::main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "H:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab11",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
-    "org.rust.disableDetachedFileInspectionH:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab1/src/Task-5.rs": "true",
-    "org.rust.disableDetachedFileInspectionH:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab1/src/task-5.rs": "true",
-    "org.rust.first.attach.projects": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Run.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test task_1_3.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test task_1_5.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test task_2.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test task_2::main.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test task_3::comb.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test task_3::main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab11&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.disableDetachedFileInspectionH:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab1/src/Task-5.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspectionH:/my life/Основи алгоритмізації та програмування/Rust_PROJECT/Lab_project_crypto/Lab1/src/task-5.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Cargo.Run">
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="buildProfileId" value="dev" />
@@ -211,7 +213,8 @@
       <workItem from="1727603352564" duration="1835000" />
       <workItem from="1727606276678" duration="20000" />
       <workItem from="1727606302297" duration="2000" />
-      <workItem from="1727606328586" duration="315000" />
+      <workItem from="1727606328586" duration="779000" />
+      <workItem from="1727607129706" duration="7000" />
     </task>
     <servers />
   </component>
