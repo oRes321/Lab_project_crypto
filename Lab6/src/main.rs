@@ -1,89 +1,71 @@
-use num_bigint::{BigInt, ToBigInt};
-use num_integer::Integer;
-use num_traits::{One, Zero};
-use rand::{thread_rng, Rng};
+use rand::Rng;
 
-// Функція для обчислення НСД
-fn gcd(a: &BigInt, b: &BigInt) -> BigInt {
-    if *b == BigInt::zero() {
-        a.clone()
+fn gcd(a: i64, b: i64) -> i64 {
+    if b == 0 {
+        a
     } else {
-        gcd(b, &(a % b))
+        gcd(b, a % b)
     }
 }
 
-// Розширений алгоритм Евкліда для знаходження оберненого значення
-fn mod_inverse(e: &BigInt, phi: &BigInt) -> Option<BigInt> {
-    let (mut t, mut new_t) = (BigInt::zero(), BigInt::one());
-    let (mut r, mut new_r) = (phi.clone(), e.clone());
+fn mod_exp(base: i64, exp: i64, modulus: i64) -> i64 {
+    let mut result = 1;
+    let mut base = base % modulus;
+    let mut exp = exp;
 
-    while new_r != BigInt::zero() {
-        let quotient = &r / &new_r;
-
-        // Обновлення t та r
-        let temp_t = new_t.clone();
-        new_t = &t - &quotient * &new_t;
-        t = temp_t;
-
-        let temp_r = new_r.clone();
-        new_r = &r - &quotient * &new_r;
-        r = temp_r;
+    while exp > 0 {
+        if exp % 2 == 1 {
+            result = (result * base) % modulus;
+        }
+        exp >>= 1;
+        base = (base * base) % modulus;
     }
-
-    if r > BigInt::one() {
-        None // Не існує оберненого значення
-    } else if t < BigInt::zero() {
-        Some(t + phi)
-    } else {
-        Some(t)
-    }
+    result
 }
 
-// Функція для генерації ключів RSA
-fn generate_rsa_keys(p: BigInt, q: BigInt) -> Option<(BigInt, BigInt, BigInt)> {
-    // Обчислення модуля n = p * q
-    let n = &p * &q;
+fn generate_keys() -> (i64, i64, i64, i64) {
+    let p = 61;
+    let q = 53;
+    let n = p * q;
+    let phi = (p - 1) * (q - 1);
 
-    // Обчислення φ(n) = (p - 1) * (q - 1)
-    let phi = (&p - BigInt::one()) * (&q - BigInt::one());
-
-    // Вибір значення e, яке є взаємно простим з φ(n)
-    let mut rng = thread_rng();
-    let mut e: BigInt;
-
-    loop {
-        // Генерація випадкового числа в межах [2, φ(n))
-        let rand_num: u64 = rng.gen_range(2..=u64::MAX);
-        e = rand_num.to_bigint().unwrap();
-
-        // Переконатися, що e < φ(n)
-        if &e >= &phi {
-            continue;
-        }
-
-        // Переконуємось, що e взаємно просте з φ(n)
-        if gcd(&e, &phi) == BigInt::one() {
-            break;
-        }
+    let mut e = 3;
+    while gcd(e, phi) != 1 {
+        e += 1;
     }
 
-    // Обчислення приватного ключа d
-    let d = mod_inverse(&e, &phi)?;
+    let mut k = 1;
+    while (1 + k * phi) % e != 0 {
+        k += 1;
+    }
+    let d = (1 + k * phi) / e;
 
-    Some((e, d, n))
+    println!("Прості числа p: {}, q: {}", p, q);
+    println!("Відкритий ключ (n, e): ({}, {})", n, e);
+    println!("Закритий ключ (n, d): ({}, {})", n, d);
+
+    (n, e, d, phi)
+}
+
+fn encrypt(message: i64, e: i64, n: i64) -> i64 {
+    mod_exp(message, e, n)
+}
+
+fn decrypt(cipher: i64, d: i64, n: i64) -> i64 {
+    mod_exp(cipher, d, n)
 }
 
 fn main() {
-    // Встановлення значень p та q (мають бути великими простими числами)
-    let p = 61.to_bigint().unwrap();
-    let q = 53.to_bigint().unwrap();
+    let (n, e, d, _) = generate_keys();
 
-    // Генерація ключів
-    match generate_rsa_keys(p, q) {
-        Some((e, d, n)) => {
-            println!("Відкритий ключ (e, n): ({}, {})", e, n);
-            println!("Приватний ключ (d, n): ({}, {})", d, n);
-        }
-        None => println!("Не вдалося знайти обернене значення."),
-    }
+    let mut input = String::new();
+    println!("Введіть повідомлення (ціле число): ");
+    std::io::stdin().read_line(&mut input).expect("Помилка при читанні введення");
+    let message: i64 = input.trim().parse().expect("Введіть коректне ціле число");
+
+    let cipher = encrypt(message, e, n);
+    println!("Зашифроване повідомлення: {}", cipher);
+
+    let decrypted_message = decrypt(cipher, d, n);
+    println!("Розшифроване повідомлення: {}", decrypted_message);
 }
